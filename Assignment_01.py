@@ -32,11 +32,13 @@ end_node = input("Enter the end node: ").strip().upper()
 priority_queue = []
 NOb = Node(nodename=start_node, parent=None, g=0, h=H[start_node], f=0)
 priority_queue.append(NOb)
-
 def get_priority(obj):
     return obj.f
 # A* search algorithm
 while priority_queue:
+
+
+
     NOb = min(priority_queue, key=get_priority)
     priority_queue.remove(NOb)
 
@@ -56,5 +58,5 @@ while NOb.parent is not None:
 path.insert(0, start_node)
 
 # Print the path and cost
-print("Path:", path.reverse())
+print("Path:", path)
 print("Cost:", cost)

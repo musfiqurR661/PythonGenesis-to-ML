@@ -16,3 +16,4 @@ a_reshap=a.reshape((2, 2))
 a_reshapTrans=a.reshape((2, 2)).T
 print(a_reshap)
 print(a_reshapTrans)
+
