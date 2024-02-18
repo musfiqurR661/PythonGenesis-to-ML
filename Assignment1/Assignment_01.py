@@ -1,10 +1,11 @@
 class Node:
-    def __init__(self, nodename, parent, g, h, f):
+    def __init__(self, nodename, parent, g, h):
         self.nodename = nodename
         self.parent = parent
         self.g = g
         self.h = h
-        self.f = f
+        self.f = g + h
+
 
 adjacency_list = {
     'S': [('A', 1), ('B', 4)],
@@ -30,14 +31,16 @@ end_node = input("Enter the end node: ").strip().upper()
 
 # Initialize the priority queue with the start node
 priority_queue = []
-NOb = Node(nodename=start_node, parent=None, g=0, h=H[start_node], f=0)
+NOb = Node(nodename=start_node, parent=None, g=0, h=H[start_node])
 priority_queue.append(NOb)
+
+
 def get_priority(obj):
     return obj.f
+
+
 # A* search algorithm
 while priority_queue:
-
-
 
     NOb = min(priority_queue, key=get_priority)
     priority_queue.remove(NOb)
