@@ -2,10 +2,10 @@ import math
 
 
 def listIns():
-    # list = [7, 1, 9, 0, 5, 8, 4, 2, 10, 0, 20]
+     list = [7, 1, 9, 0, 5, 8, 4, 2, 10, 0, 20]
 
-    list = [2, 1, 5, 0]
-    return list
+    # list = [2, 1, 5, 0]
+     return list
 
 
 # counting inversion
@@ -33,9 +33,23 @@ def generate_neighbors(current_state):
             neighbors.append(new_list.copy())
     return neighbors
 
+#extra function for my visualization
 
+# Define the current_state
+# current_state = [2, 1, 5, 0]
+current_state = [7, 1, 9, 0, 5, 8, 4, 2, 10, 0, 20]
+
+
+# Generate neighbors
+neighbors = generate_neighbors(current_state)
+
+# Print the neighbors
+for neighbor in neighbors:
+    print(neighbor)
 # stat generation
-
+##
+    
+    
 def stat_generation(current_state):
     while True:
         current_state_cost = cost_calculation(current_state)
@@ -47,7 +61,7 @@ def stat_generation(current_state):
         for i in range(length):
             next_state = neighbors[i]
             next_state_cost = cost_calculation(next_state)
-            if next_state_cost < min_next_cost:
+            if next_state_cost < min_next_cost: #different
                 min_next_cost = next_state_cost
                 min_next_state = next_state
 
