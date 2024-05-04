@@ -38,7 +38,12 @@ for e in range(100):
         break
     else:
         centroid_old = centroid_new.copy()  # Update centroid_old
-
+        print(centroid_old)
+print(dist.shape)
+print(label)
+print(centroid_new)
+print(max_difference)
+print(centroid_old)
 # Final scatter plot
 plt.scatter(X[label == 0, 0], X[label == 0, 1], s=15, color='red')
 plt.scatter(X[label == 1, 0], X[label == 1, 1], s=15, color='green')
